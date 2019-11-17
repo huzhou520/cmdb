@@ -1,0 +1,13 @@
+2019-11-17 10:00:18,306 - cmdb - ERROR -log:  Traceback (most recent call last):
+  File "D:\python\Django_learn\auto_client\libs\plugins\cpu.py", line 13, in process
+    ret = ssh_func(hostname, 'cat /proc/cpuinfo | head -n 4')
+  File "D:/python/Django_learn/auto_client/app.py", line 30, in ssh
+    pkey=private_key)
+  File "D:\ruanjian\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "D:\ruanjian\lib\site-packages\paramiko\util.py", line 280, in retry_on_signal
+    return function()
+  File "D:\ruanjian\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
