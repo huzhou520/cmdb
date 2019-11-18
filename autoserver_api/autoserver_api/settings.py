@@ -131,4 +131,5 @@ CMDB_PLUGIN_DICT = {
     'disk': 'api.plugins.disk.Disk',
     'cpu': 'api.plugins.cpu.Cpu',
     'memory': 'api.plugins.memory.Memory',
+    'board': 'api.plugins.board.Board',
 }

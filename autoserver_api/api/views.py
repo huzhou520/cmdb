@@ -11,7 +11,12 @@ from api.plugins import process_server_info
 
 class ServerView(APIView):
     def get(self, request, *args, **kwargs):
-        host_list = ['192.168.16.158']
+        # host_list = ['192.168.16.158']
+        host_list = []
+        host_queryset = models.Host.objects.all()
+        for obj in host_queryset:
+            if obj.status == 1:
+                host_list.append(obj.hostname)
         return Response(host_list)
 
     def post(self, request, *args, **kwargs):

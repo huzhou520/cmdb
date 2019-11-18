@@ -53,7 +53,7 @@ def run():
     response = requests.get(url="http://127.0.0.1:8000/api/v1/server/")
     # print(response.text, type(response))
     host_list = response.json()
-    # print(host_list, type(host_list))
+    print(host_list, type(host_list))
     pool = ThreadPoolExecutor(settings.THREAD_POOL_SIZE)
     for host in host_list:
         # 方法一：

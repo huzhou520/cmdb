@@ -1,10 +1,27 @@
 from django.db import models
 
+
 # Create your models here.
 
 
 class Host(models.Model):
+    status_choices = (
+        (1, '上线'),
+        (2, '下线'),
+    )
+    status = models.IntegerField(verbose_name='状态', choices=status_choices, default=1)
     hostname = models.CharField(verbose_name='主机ip', max_length=32)
+
+    # board
+    sn = models.CharField(verbose_name='SN号', max_length=64, null=True, blank=True)
+    model = models.CharField(verbose_name='SN号', max_length=64, null=True, blank=True)
+    manufacturer = models.CharField(verbose_name='SN号', max_length=64, null=True, blank=True)
+
+    # CPU
+    # processor = models.CharField(verbose_name='处理器', max_length=12)
+    # vendor_id = models.CharField(verbose_name='厂商名字', max_length=12)
+    # cpu_family = models.CharField(verbose_name='cpu核数', max_length=12)
+    # model = models.CharField(verbose_name='cpu模式', max_length=12)
 
 
 class Disk(models.Model):
